@@ -1,0 +1,77 @@
+Pre requisites
+------------------------
+Python 3.6 or above
+pip3 install fastapi
+pip3 install uvicorn
+pip3 freeze
+pip3 install mypy
+pip install fastapi uvicorn psycopg2-binary sqlalchemy pydantic
+
+PostgreSQL
+-------------------------
+# To start uvicorn server 
+uvicorn main:app –reload
+
+# To Access API docs/Swager
+ http://127.0.0.1:8000/docs
+-------------------------
+CREATE DATABASE testdb;			
+
+CREATE TABLE customer (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    age INT NOT NULL,
+    dob DATE NOT NULL,
+    gender VARCHAR(10) NOT NULL,
+    district VARCHAR(100) NOT NULL,
+    mob VARCHAR(15) NOT NULL
+);
+
+database.py=> change db settings
+----------------------
+
+
+
+------------------------------------------------------------
+Step 1: Install Dependencies
+Step 2: Set Up PostgreSQL Database
+	1.	Create a PostgreSQL database and table.
+	2.	Assuming PostgreSQL is running, connect and create a 		customer table:
+Step 3: Define the FastAPI Project Structure
+ project directory, e.g., fastapi_customer_api, and structure it like this:
+fastapi_customer_api/
+
+	 main.py          # Main application file
+	 database.py      # Database connection file
+ 	 models.py        # Database models
+	 schemas.py       # Pydantic schemas
+ 
+Step 4: Configure the Database Connection
+Step 5: Define the Models
+Step 6: Define the Schemas
+Step 7: Create the FastAPI Endpoints
+Step 8: Run the FastAPI Application
+	Run the application using Uvicorn:
+	uvicorn main:app --reload
+
+Step 9: Test the API
+		1.	Open your browser or a tool like Postman, Insomnia, 			or cURL.
+		2.	Test the endpoint:
+
+			o URL: http://127.0.0.1:8000/custome
+			o Method: POST
+			o JSON Body:
+		{
+  			"name": "John Doe",
+ 			 "age": 30,
+  			"dob": "1993-05-15",
+  			"gender": "Male",
+ 			 "district": "New York",
+  			"mob": "1234567890"
+		}
+	
+
+
+
+
+https://www.youtube.com/watch?v=tKL6wEqbyNs&list=PLShTCj6cbon9gK9AbDSxZbas1F6b6C_Mx
